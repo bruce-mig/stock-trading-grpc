@@ -1,0 +1,14 @@
+services:
+  mysql:
+    image: mysql:9.2
+    environment:
+      MYSQL_ROOT_PASSWORD: $ROOT_PASS
+      MYSQL_DATABASE: $DB_NAME
+      MYSQL_USER: $DB_USER
+      MYSQL_PASSWORD: $DB_PASS
+    networks:
+      - $DOCKER_NET
+    ports:
+      - "3306:3306"
+networks:
+  $DOCKER_NET:
